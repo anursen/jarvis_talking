@@ -1,0 +1,22 @@
+# Web Framework
+fastapi
+uvicorn[standard]
+python-multipart
+
+# OpenAI Integration
+openai
+langchain-openai
+
+# LangGraph Components  
+langgraph
+langchain-core
+
+# Environment Variables
+python-dotenv
+
+# Async Support
+aioconsole
+httpx
+
+# Utilities
+pathlib

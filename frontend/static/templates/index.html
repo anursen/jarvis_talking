@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jarvis Assistant</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <h1>Jarvis Assistant</h1>
+        <div class="controls">
+            <button id="talkButton">Hold to Talk</button>
+            <div class="status" id="status"></div>
+        </div>
+        <div class="chat-history" id="chatHistory">
+            <!-- Messages will be added here -->
+        </div>
+        <audio id="audioPlayer" style="display: none;"></audio>
+    </div>
+    <div class="settings">
+        <label>
+            <input type="checkbox" id="autoplayToggle" checked>
+            Auto-play responses
+        </label>
+    </div>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
