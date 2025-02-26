@@ -33,7 +33,7 @@ def ha_get_entities_containing(filter: str) -> list:
     }
 
     # API URL to retrieve all entity states from Home Assistant
-    api_url = "http://192.168.86.12:8123/api/states"
+    api_url = f"{os.getenv('HA_URL')}/api/states"
 
     # Make a GET request to Home Assistant API
     response = requests.get(api_url, headers=headers)
@@ -85,7 +85,7 @@ def ha_get_state_of_a_specific_entity(entity_id) -> dict:
     }
 
     # Construct the API URL using the provided entity_id
-    api_url = f"http://192.168.86.12:8123/api/states/{entity_id}"
+    api_url = f"{os.getenv('HA_URL')}/api/states/{entity_id}"
 
     # Make a GET request to the Home Assistant API to retrieve the sensor state
     response = requests.get(api_url, headers=headers)
@@ -112,7 +112,7 @@ def ha_set_state_of_a_specific_entity(entity_id,data) -> dict:
     # Define the request headers with authorization and content type
     headers = {"Authorization": f"Bearer {token}","Content-Type": "application/json"}
     # Construct the API URL using the provided entity_id
-    api_url = f"http://192.168.86.12:8123/api/states/{entity_id}"
+    api_url = f"{os.getenv('HA_URL')}/api/states/{entity_id}"
     response = post(api_url, headers=headers, json=data)
     # If the API call is successful, return the response as a JSON object
     if response.status_code == 200:
@@ -147,8 +147,8 @@ def ha_get_entity_history(entity_id):
         load_dotenv()
         token = os.getenv('HA_TOKEN')
         
-        # Use correct port 8123 for Home Assistant
-        ha_url = "http://192.168.86.12:8123"
+        # Use HA_URL from environment variables
+        ha_url = os.getenv('HA_URL')
         
         headers = {"Authorization": f"Bearer {token}", "Content-Type": "application/json"}
         

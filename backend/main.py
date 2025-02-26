@@ -256,7 +256,7 @@ if __name__ == "__main__":
             "main:app",
             host="0.0.0.0",  # Changed from localhost to listen on all interfaces
             port=8000,
-            reload=True,
+            reload=False,
             reload_excludes=["*.mp3", "*.wav", "*.audio/*"],
             ssl_keyfile=str(ssl_keyfile),
             ssl_certfile=str(ssl_certfile),
