@@ -38,3 +38,14 @@ certs/
 *.wav
 frontend/static/audio/
 EOF
+
+# Presentation files
+/Presentation
+
+#CodeDiagram Files
+*.codediagram
+
+
+.DS_Store
+*.bak
+*.swp

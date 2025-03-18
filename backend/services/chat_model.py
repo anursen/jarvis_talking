@@ -13,6 +13,7 @@ load_dotenv()
 client = OpenAI()
 
 def get_chat_response(user_input: str) -> str:
+    '''Depreceated function. Use jarvis_with_memory instead.'''
     try:
         response = client.chat.completions.create(
             model="gpt-4",
